@@ -1,0 +1,16 @@
+<aura:component description="Handles UI for configuring ignore behavior on the Valence IgnoreFilter" access="global">
+
+	<!--Attributes-->
+	<aura:attribute name="link" type="Object" access="global" description="Information about the Link that may prove useful during configuration." />
+	<aura:attribute name="configuration" type="Object" access="global" description="The configuration object. Valence will load and persist this for you." />
+	<aura:attribute name="mapping" type="Object" access="global" description="Information about the Mapping, if appropriate." />
+	<aura:attribute name="isValid" type="Boolean" access="global" description="A flag to indicate if the configuration is allowed to be saved." />
+	<aura:attribute name="isDirty" type="Boolean" access="global" description="A flag to indicate if the configuration has changed." />
+
+	<!--Content-->
+	<c:ignoreFilterConfigurator link="{!v.link}"
+								publicConfig="{!v.configuration}"
+								onupdateconfig="{!c.updateConfig}"
+								onupdatevalid="{!c.updateValid}" />
+
+</aura:component>

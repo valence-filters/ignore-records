@@ -1,0 +1,31 @@
+<!-- Ignore Filter Configurator -->
+<template>
+	<p class="slds-m-vertical_small">
+		In order to not be ignored, values in this field
+		<lightning-combobox label="Condition"
+							variant="label-hidden"
+							value={configuration.condition}
+							onchange={updateCondition}
+							options={conditionOptions}></lightning-combobox>
+		be any of the following values:
+	</p>
+	<lightning-card title="Choices">
+		<lightning-button label="Add Choice" onclick={addChoice} slot="actions"></lightning-button>
+		<lightning-layout multiple-rows="true">
+			<template for:each={choices} for:item="choice" for:index="index">
+				<lightning-layout-item size="10" padding="around-small" key={choice.key}>
+					<lightning-input label="Choice" onchange={choiceUpdated} value={choice.value} data-index={index} variant="label-hidden"></lightning-input>
+				</lightning-layout-item>
+				<lightning-layout-item size="2" padding="around-small" key={choice.key}>
+					<lightning-button-icon icon-name="utility:close"
+										   alternative-text="Remove this choice"
+										   value={index}
+										   onclick={removeChoice}></lightning-button-icon>
+				</lightning-layout-item>
+			</template>
+		</lightning-layout>
+	</lightning-card>
+
+	<lightning-input label="Ignore Reason" value={configuration.ignoreReason} onchange={updateReason}></lightning-input>
+
+</template>
