@@ -20,7 +20,7 @@ And here's what it looks like when a record is blocked:
 
 To use this Filter you can either:
  
-1. Install an unlocked package version ([sandbox]() | [production]())
+1. [Install an unlocked package version](https://github.com/valence-filters/ignore-records/releases)
 2. Clone this repository
 
 If you clone the repository and have Salesforce DX CLI set up, you can easily build a scratch org to test the filter by running `./scripts/create_dev_org`.
